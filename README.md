@@ -10,7 +10,7 @@ This is a small middleware to use with restify to verify Recaptcha response from
 
 ## Usage
 
-```
+```javascript
 ...
 var recaptchaFactory = require('restify-no-captcha');
 var mySecretRecaptchaFromGoogle = 'xxxxxxDDDDAAAAbhq2P9NkorGs3bjseddDd-xz43'';
