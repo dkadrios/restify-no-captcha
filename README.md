@@ -1,6 +1,6 @@
 # restify-no-captcha
 
-This is a small middleware to use with restify to verify Recaptcha response from google.
+This is a small middleware to use with restify to verify Recaptcha response from [google reCaptcha](https://developers.google.com/recaptcha/)
 
 ## First thing first
 
