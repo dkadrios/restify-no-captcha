@@ -1,0 +1,19 @@
+{
+  "name": "restify-no-captcha",
+  "version": "0.0.2",
+  "description": "Google no-captcha recaptcha middleware for restify using request-promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makinhs/restify-no-captcha"
+  },
+  "author": "Marcos Silva",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.78.0",
+    "request-promise": "^4.1.1"
+  }
+}
