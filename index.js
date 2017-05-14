@@ -14,7 +14,8 @@ function VerifyCaptchaFactory(secretKey) {
         }
         return requestPromise({
             method: 'GET',
-            url: 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + '&response=' + req.body.recaptchaResponse
+            url: 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + '&response=' + req.body.recaptchaResponse,
+            json: true
         })
             .then(function (data) {
 
