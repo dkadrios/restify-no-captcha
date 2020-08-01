@@ -1,6 +1,6 @@
 {
   "name": "restify-no-captcha",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Google no-captcha recaptcha middleware for restify using request-promise",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "author": "Marcos Silva",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.78.0",
-    "request-promise": "^4.1.1"
+    "axios": "0.19.2"
   }
 }

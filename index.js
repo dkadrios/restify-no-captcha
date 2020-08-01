@@ -1,9 +1,8 @@
 'use strict';
-var requestPromise = require('request-promise');
+var axios = require('axios');
 
 var secret = '';
-function VerifyCaptchaFactory(secretKey) {
-    secret = secretKey;
+function VerifyCaptchaFactory(secret, remoteip) {
     return function (req, res, next) {
 
         if (!req.body) {
@@ -12,14 +11,14 @@ function VerifyCaptchaFactory(secretKey) {
         if (!req.body.recaptchaResponse) {
             return res.send(400, {error: 'Missing recaptchaResponse field in body'});
         }
-        return requestPromise({
-            method: 'GET',
-            url: 'https://www.google.com/recaptcha/api/siteverify?secret=' + secret + '&response=' + req.body.recaptchaResponse,
-            json: true
+        return axios.post('https://www.google.com/recaptcha/api/siteverify', {
+            secret,
+            response: req.body.recaptchaResponse,
+			remoteip,
         })
-            .then(function (data) {
+            .then(function (response) {
 
-                if (data.success === true) {
+                if (response.success === true) {
                     return next();
                 } else {
                     return res.send(400, {error: 'Recaptcha verify failed'});
